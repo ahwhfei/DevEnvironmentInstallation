@@ -5,6 +5,7 @@
 # @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/DevEnvironmentInstallation/DevEnvironmentInstallation.ps1'))"
 # To run it inside a WINDOWS POWERSHELL console against the production branch (only one supported with self-elevation) use
 # start-process -FilePath PowerShell.exe -Verb Runas -Wait -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/DevEnvironmentInstallation/DevEnvironmentInstallation.ps1'))"
+param([string]$VisualStudioIsoFile = "")
 
 # Check if latest .NET framework installed is at least 4
 $dotNetVersions = Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP' -recurse | Get-ItemProperty -name Version,Release -EA 0 | Where { $_.PSChildName -match '^(?!S)\p{L}'} | Select Version
@@ -53,6 +54,8 @@ function Pause {
 	Write-Host "Press any key to continue..."
 	[void][System.Console]::ReadKey($true)
 }
+
+Install "Visual Studio" "Installing Visual Studio" "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/DevEnvironmentInstallation/Install-VisualStudio.ps1') -VisualStudioIsoFile $VisualStudioIsoFile )"
 
 # Actually installing all other dependencies
 # Install Chocolately
