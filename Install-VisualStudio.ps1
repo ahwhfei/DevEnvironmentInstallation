@@ -1,4 +1,4 @@
-param([string]$VisualStudioIsoFile = "", [string]$OutputFolder = "C:\_VSInstall", [string]$Overwrite = $true)
+param([string]$VisualStudioIsoFile = "\\njrdfs1.eng.citrite.net\CSP\Software\VisualStudio2015\en_visual_studio_enterprise_2015_with_update_3_x86_x64_dvd.iso", [string]$OutputFolder = "C:\_VSInstall", [string]$Overwrite = $true)
 
 if (($VisualStudioIsoFile -eq "") -or ((Test-Path -LiteralPath $VisualStudioIsoFile) -eq $False)) {
     Write-Host -ForegroundColor Red "ERROR: $VisualStudioIsoFile file not found"
