@@ -76,6 +76,8 @@ Install "Visual Studio Code" "Installing Visual Studio Code" "cinst visualstudio
 
 Install "Node JS" "Installing Node JS" "cinst nodejs.install --force --yes"
 
+RefreshEnv
+
 Install "Bower" "Installing Bower" "npm install -g bower"
 
 Install "Grunt" "Installing Grunt" "npm install -g grunt-cli"
@@ -89,6 +91,8 @@ Install "ReSharper" "Installing ReSharper" "cinst resharper --force --yes"
 Install "JRE" "Installing Java Runtime Environment" "cinst jre8 --force --yes"
 
 Install "Wix Toolset" "Installing Wix Toolset" "cinst wixtoolset --force --yes --allow-empty-checksums"
+
+RefreshEnv
 
 Write-Host -ForegroundColor Green "This script has modified your environment. You need to log off and log back on for the changes to take effect."
 Pause

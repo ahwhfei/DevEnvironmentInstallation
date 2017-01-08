@@ -1,5 +1,15 @@
 param([string]$VisualStudioIsoFile = "", [string]$OutputFolder = "C:\_VSInstall", [string]$Overwrite = $false)
 
+function Warning {
+    Write-Host -ForegroundColor Yellow "=============================================="
+    Write-Host -ForegroundColor Yellow "Please make sure you have right to access the path!!!"
+    Write-Host -ForegroundColor Yellow $VisualStudioIsoFile
+    Write-Host -ForegroundColor Yellow "=============================================="
+    Write-Host -ForegroundColor Green "Please try to access the path firstly. Prees any key to continue!"
+    [void][System.Console]::ReadKey($true)
+    Write-Host -ForegroundColor Green "The next step will take long time..."
+}
+
 if ($VisualStudioIsoFile -eq "") {
     $server = ""
     Write-Host "Please choice an installation server"
@@ -8,21 +18,13 @@ if ($VisualStudioIsoFile -eq "") {
     } until ($server -eq "f" -or $server -eq "n")
 
     if ($server -eq "f") {
-        $VisualStudioIsoFile = "\\eng.citrite.net\ftl\Apps\Microsoft\VisualStudio\EN\2015\2015 with Update 3\Enterprise\vs2015.3.ent_enu.iso"
+        $VisualStudioIsoFile = (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/DevEnvironmentInstallation/ftl.config')
     } elseif ($server -eq "n") {
-        $VisualStudioIsoFile = "\\njrdfs1.eng.citrite.net\CSP\Software\VisualStudio2015\en_visual_studio_enterprise_2015_with_update_3_x86_x64_dvd.iso"    
+        $VisualStudioIsoFile = (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/DevEnvironmentInstallation/nkg.config')
     }
-}
 
-function Warning {
-    Write-Host -ForegroundColor Yellow "=============================================="
-    Write-Host -ForegroundColor Yellow "Please make sure you have right to access $VisualStudioIsoFile!!!"
-    Write-Host -ForegroundColor Yellow "=============================================="
-    Write-Host -ForegroundColor Green "Prees any key to continue installation"
-    [void][System.Console]::ReadKey($true)
+    Warning
 }
-
-Warning
 
 if (($VisualStudioIsoFile -eq "") -or ((Test-Path -LiteralPath $VisualStudioIsoFile) -eq $False)) {
     Write-Host -ForegroundColor Red "ERROR: $VisualStudioIsoFile file not found"
