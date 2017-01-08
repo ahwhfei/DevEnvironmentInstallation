@@ -83,7 +83,7 @@ function ExecuteVSInstallCommand ($CommandName) {
     $CommandFullPath = "$OutputFolder\$CommandName"
     if (Test-Path -LiteralPath ($CommandFullPath)) {
         Write-Host -ForegroundColor Green "Create Admin File..."
-        iex ".\$CommandName /CreateAdminFile .\AdminDeployment.xml"
+        iex ".\$CommandName /CreateAdminFile .\AdminDeployment.xml /quiet"
 
         WaitAdminFile "$OutputFolder\AdminDeployment.xml"
 
