@@ -6,6 +6,7 @@ do {
 } until ([string]::IsNullOrWhiteSpace($result))
 
 Write-Host ""
+Write-Host "Visual Studio Installer Return Code: $LASTEXITCODE"
 if (($LASTEXITCODE -eq 0) -or ($LASTEXITCODE -eq 0x00000bc2)) {
     if ($LASTEXITCODE -eq 0x00000bc2) {
         Write-Host -ForegroundColor Green "Need to reboot to take effect."
