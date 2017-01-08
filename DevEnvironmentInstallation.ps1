@@ -54,8 +54,6 @@ function Pause {
 	[void][System.Console]::ReadKey($true)
 }
 
-Install "Visual Studio" "Installing Visual Studio" "iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/Install-VisualStudio.ps1')"
-
 # Actually installing all other dependencies
 # Install Chocolately
 Install "Chocolately(It's mandatory for the rest of the script)" "Installing Chocolately" "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))"
@@ -76,7 +74,9 @@ Install "Visual Studio Code" "Installing Visual Studio Code" "cinst visualstudio
 
 Install "Node JS" "Installing Node JS" "cinst nodejs.install --force --yes"
 
-RefreshEnv
+Install "Bower" "Installing Bower" "C:\Program Files\nodejs\npm install -g bower"
+
+Install "Grunt" "Installing Grunt" "C:\Program Files\nodejs\npm install -g grunt-cli"
 
 Install "Source Tree" "Installing Source Tree" "cinst sourcetree --force --yes"
 
@@ -88,11 +88,8 @@ Install "JRE" "Installing Java Runtime Environment" "cinst jre8 --force --yes"
 
 Install "Wix Toolset" "Installing Wix Toolset" "cinst wixtoolset --force --yes --allow-empty-checksums"
 
-Install "Bower" "Installing Bower" "npm install -g bower"
+Install "Visual Studio" "Installing Visual Studio" "iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/Install-VisualStudio.ps1')"
 
-Install "Grunt" "Installing Grunt" "npm install -g grunt-cli"
-
-RefreshEnv
 
 Write-Host -ForegroundColor Green "This script has modified your environment. You need to log off and log back on for the changes to take effect."
 Pause

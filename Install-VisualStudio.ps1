@@ -12,7 +12,7 @@ function Warning {
     
     if ($hasRight -eq "n") {
         Write-Host -ForegroundColor Yellow "WARNING: Skipping visual studio installation"
-        Exit 1
+        Exit 0
     }
     Write-Host -ForegroundColor Green "The next step will take long time..."
 }
@@ -73,7 +73,7 @@ $originFolder = $PWD
 Set-Location $OutputFolder
 
 function WaitAdminFile ($AdminFileName) {
-    Wait-Host -ForegroundColor Green "Creating Visual Studio Deployment File ..."
+    Write-Host -ForegroundColor Green "Creating Visual Studio Deployment File ..."
     do {
 	    Start-Sleep -Milliseconds 100
 	} until (Test-Path -LiteralPath $AdminFileName)
