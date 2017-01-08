@@ -74,9 +74,9 @@ Install "Visual Studio Code" "Installing Visual Studio Code" "cinst visualstudio
 
 Install "Node JS" "Installing Node JS" "cinst nodejs.install --force --yes"
 
-Install "Bower" "Installing Bower" '"C:\Program Files\nodejs\npm" install -g bower'
+Install "Bower" "Installing Bower" '&"C:\Program Files\nodejs\npm" install -g bower'
 
-Install "Grunt" "Installing Grunt" '"C:\Program Files\nodejs\npm" install -g grunt-cli'
+Install "Grunt" "Installing Grunt" '&"C:\Program Files\nodejs\npm" install -g grunt-cli'
 
 Install "Source Tree" "Installing Source Tree" "cinst sourcetree --force --yes"
 
