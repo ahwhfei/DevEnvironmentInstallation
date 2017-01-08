@@ -77,10 +77,10 @@ function ExecuteVSInstallCommand ($CommandName) {
 
         WaitAdminFile $CommandFullPath
 
-        Write-Host -ForegroundColor Green "Visual Studio Enterprise is installing in background, will compelete in 1-2 hours"
+        Write-Host -ForegroundColor Green "Visual Studio Enterprise is installing slicently without user input"
 
         $AdminFile = "$OutputFolder\AdminDeployment.xml";
-        $VSInstallCommand = ".\$CommandName" + ' /AdminFile "$AdminFile" /quiet /norestart'
+        $VSInstallCommand = ".\$CommandName" + ' /AdminFile "$AdminFile" /passive /norestart'
         iex $VSInstallCommand
     }
 }
