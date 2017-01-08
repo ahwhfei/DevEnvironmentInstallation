@@ -55,7 +55,6 @@ function Pause {
 }
 
 Install "Visual Studio" "Installing Visual Studio" "iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/Install-VisualStudio.ps1')"
-iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/Verify-VSInstalled.ps1')
 
 # Actually installing all other dependencies
 # Install Chocolately

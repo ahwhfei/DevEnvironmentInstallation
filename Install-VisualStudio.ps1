@@ -104,5 +104,7 @@ elseif (Test-Path -LiteralPath ("$OutputFolder\vs_professional.exe")) {
     Write-Host -ForegroundColor Red "ERROR: not found vs installation file"
 }
 
+iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/Verify-VSInstalled.ps1')
+
 Set-Location $originFolder
 
