@@ -78,10 +78,6 @@ Install "Node JS" "Installing Node JS" "cinst nodejs.install --force --yes"
 
 RefreshEnv
 
-Install "Bower" "Installing Bower" "npm install -g bower"
-
-Install "Grunt" "Installing Grunt" "npm install -g grunt-cli"
-
 Install "Source Tree" "Installing Source Tree" "cinst sourcetree --force --yes"
 
 Install "Git" "Installing Git" "cinst git --force --yes"
@@ -91,6 +87,10 @@ Install "ReSharper" "Installing ReSharper" "cinst resharper --force --yes"
 Install "JRE" "Installing Java Runtime Environment" "cinst jre8 --force --yes"
 
 Install "Wix Toolset" "Installing Wix Toolset" "cinst wixtoolset --force --yes --allow-empty-checksums"
+
+Install "Bower" "Installing Bower" "npm install -g bower"
+
+Install "Grunt" "Installing Grunt" "npm install -g grunt-cli"
 
 RefreshEnv
 

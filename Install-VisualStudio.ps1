@@ -5,8 +5,17 @@ function Warning {
     Write-Host -ForegroundColor Yellow "Please make sure you have right to access the path!!!"
     Write-Host -ForegroundColor Yellow $VisualStudioIsoFile
     Write-Host -ForegroundColor Yellow "=============================================="
-    Write-Host -ForegroundColor Green "Please try to access the path firstly. Prees any key to continue!"
+    Write-Host "Tips: Note that check whether you have right to access the path. Copy link/Win+R/Login with your citrite account"
+    Write-Host -ForegroundColor Green "Prees any key to continue!"
     [void][System.Console]::ReadKey($true)
+    do {
+        $hasRight = (Read-Host "Has right? (Y)es/(N)o").ToLower()
+    } until($hasRight -eq "y" -or $hasRight -eq "n")
+    
+    if ($hasRight -eq "n") {
+        Write-Host -ForegroundColor Yellow "WARNING: Skipping visual studio installation"
+        Exit 1
+    }
     Write-Host -ForegroundColor Green "The next step will take long time..."
 }
 
@@ -66,8 +75,9 @@ $originFolder = $PWD
 Set-Location $OutputFolder
 
 function WaitAdminFile ($AdminFileName) {
+    Wait-Host -ForegroundColor Green "Creating Visual Studio Deployment File ..."
     do {
-	    Start-Sleep -Milliseconds 10
+	    Start-Sleep -Milliseconds 100
 	} until (Test-Path -LiteralPath $AdminFileName)
 }
 
@@ -77,7 +87,7 @@ function ExecuteVSInstallCommand ($CommandName) {
         Write-Host -ForegroundColor Green "Create Admin File..."
         iex ".\$CommandName /CreateAdminFile .\AdminDeployment.xml"
 
-        WaitAdminFile $CommandFullPath
+        WaitAdminFile "$OutputFolder\AdminDeployment.xml"
 
         Write-Host -ForegroundColor Green "Visual Studio Enterprise is installing slicently without user input"
 
