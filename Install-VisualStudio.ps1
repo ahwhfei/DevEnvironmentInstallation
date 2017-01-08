@@ -5,9 +5,7 @@ function Warning {
     Write-Host -ForegroundColor Yellow "Please make sure you have right to access the path!!!"
     Write-Host -ForegroundColor Yellow $VisualStudioIsoFile
     Write-Host -ForegroundColor Yellow "=============================================="
-    Write-Host "Tips: Note that check whether you have right to access the path. Copy link/Win+R/Login with your citrite account"
-    Write-Host -ForegroundColor Green "Prees any key to continue!"
-    [void][System.Console]::ReadKey($true)
+    Write-Host "Tips: Note that check whether you have right to access the path. Copy link / Win+R / Login with your citrite account"
     do {
         $hasRight = (Read-Host "Has right? (Y)es/(N)o").ToLower()
     } until($hasRight -eq "y" -or $hasRight -eq "n")
