@@ -72,26 +72,16 @@ if (-not (Test-Path $OutputFolder)) {
 $originFolder = $PWD
 Set-Location $OutputFolder
 
-function WaitAdminFile ($AdminFileName) {
-    Write-Host -ForegroundColor Green "Creating Visual Studio Deployment File ..."
-    do {
-	    Start-Sleep -Milliseconds 100
-	} until (Test-Path -LiteralPath $AdminFileName)
-}
-
 function ExecuteVSInstallCommand ($CommandName) {
     $CommandFullPath = "$OutputFolder\$CommandName"
     if (Test-Path -LiteralPath ($CommandFullPath)) {
+        $AdminFile = "$OutputFolder\AdminDeployment.xml"
         Write-Host -ForegroundColor Green "Create Admin File..."
-        iex ".\$CommandName /CreateAdminFile .\AdminDeployment.xml /quiet"
-
-        WaitAdminFile "$OutputFolder\AdminDeployment.xml"
+        Start-Process -FilePath "$CommandFullPath" -ArgumentList "/CreateAdminFile $AdminFile /quiet" -Wait
 
         Write-Host -ForegroundColor Green "Visual Studio Enterprise is installing slicently without user input"
-
-        $AdminFile = "$OutputFolder\AdminDeployment.xml";
-        $VSInstallCommand = ".\$CommandName" + ' /AdminFile "$AdminFile" /quiet /norestart'
-        iex $VSInstallCommand
+        Write-Host -ForegroundColor Green "Please wait ..."
+        Start-Process -FilePath "$CommandFullPath" -ArgumentList '/AdminFile "$AdminFile" /quiet /norestart' -Wait
     }
 }
 
@@ -103,8 +93,6 @@ elseif (Test-Path -LiteralPath ("$OutputFolder\vs_professional.exe")) {
 } else {
     Write-Host -ForegroundColor Red "ERROR: not found vs installation file"
 }
-
-iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/Verify-VSInstalled.ps1')
 
 Set-Location $originFolder
 
