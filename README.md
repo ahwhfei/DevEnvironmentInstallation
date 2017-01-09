@@ -8,7 +8,7 @@ The goal of this script is for installing dev machine automated. It's benefit fo
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/DevEnvironmentInstallation.ps1'))"
 ```
 ## Applications List
-* These applications will be installed automatically:
+### These applications will be installed automatically:
 * Google Chrome
 * Sublime text 3
 * Visual Studio Code
