@@ -25,3 +25,8 @@ The goal of this script is for installing dev machine automated. It's benefit fo
 * Azure PowerShell
 * Wix Toolset
 * AWS SDK
+
+## Supported Operating System
+* Windows 8
+* Windows 8.1
+* Windows Server 2016
