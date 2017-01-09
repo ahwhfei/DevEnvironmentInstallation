@@ -3,13 +3,13 @@
         {
             "Name": "Chocolately",
             "Message": "Installing Chocolately",
-            "Script": "iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/Install-VisualStudio.ps1')",
+            "Script": "iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/develop/Install-VisualStudio.ps1')",
             "QuitCode": 0
         },
         {
             "Name": "Visual Studio",
             "Message": "Installing Visual Studio",
-            "Script": "iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/Install-VisualStudio.ps1')"
+            "Script": "iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/develop/Install-VisualStudio.ps1')"
         },
         {
             "Name": "Google Chrome",

@@ -5,7 +5,7 @@ The goal of this script is for installing dev machine automated. It's benefit fo
 ## How to Use
 * Open "cmd" to run the command as administrator
 ```PowerShell
-@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/Install.ps1'))"
+@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/develop/Install.ps1'))"
 ```
 ## Applications List
 ### These applications will be installed automatically:

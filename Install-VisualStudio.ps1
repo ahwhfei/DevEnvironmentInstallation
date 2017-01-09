@@ -44,9 +44,9 @@ if ($VisualStudioIsoFile -eq "") {
     } until ($server -eq "f" -or $server -eq "n")
 
     if ($server -eq "f") {
-        $VisualStudioIsoFile = (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/ftl.config')
+        $VisualStudioIsoFile = (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/develop/ftl.config')
     } elseif ($server -eq "n") {
-        $VisualStudioIsoFile = (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/nkg.config')
+        $VisualStudioIsoFile = (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/develop/nkg.config')
     }
 
     LoginWithoutWarning
