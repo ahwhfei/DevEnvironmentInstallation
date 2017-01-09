@@ -44,6 +44,8 @@ function Install($programName, $message, $script, $shouldExit) {
 
 	Write-Host $message
 	Invoke-Expression($script)
+
+	Write-Host "EXIT CODE: $LASTEXITCODE"
 	if ($LASTEXITCODE -ne 0) {
 		Write-Host -ForegroundColor Yellow "WARNING: $($programName) not installed"
 	}
