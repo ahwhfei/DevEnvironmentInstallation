@@ -24,3 +24,4 @@ The goal of this script is for installing dev machine automated. It's benefit fo
 * Azure Service Fabric SDK
 * Azure PowerShell
 * Wix Toolset
+* AWS SDK
