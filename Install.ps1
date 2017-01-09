@@ -92,8 +92,6 @@ Install "JRE" "Installing Java Runtime Environment" "cinst jre8 --force --yes"
 
 Install "Wix Toolset" "Installing Wix Toolset" "cinst wixtoolset --force --yes --allow-empty-checksums"
 
-Install "Web Platform Installer" "Installing Web Platform Installer" "cinst webpi --force --yes"
-
 Install "Web Platform Installer Command Line" "Installing Web Platform Installer Command Line" "cinst webpicmd --force --yes"
 
 if ((Get-Command "webpicmd" -ErrorAction SilentlyContinue) -eq $null) {
