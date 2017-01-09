@@ -100,11 +100,11 @@ if ((Get-Command "webpicmd" -ErrorAction SilentlyContinue) -eq $null) {
 	exit 1
 }
 
-Install "Azure PowerShell" "Installing Azure PowerShell" 'webpicmd /install /products:"Microsoft Azure PowerShell" /AcceptEULA'
+Install "Azure PowerShell" "Installing Azure PowerShell" 'webpicmd /install /products:"Microsoft Azure PowerShell" /AcceptEULA /SuppressReboot'
 
-Install "Azure SDK for .net (VS2015) - 2.9.6" "Installing Azure SDK" 'webpicmd /install /products:"Microsoft Azure SDK for .NET (VS 2015) - 2.9.6" /AcceptEULA'
+Install "Azure SDK for .net (VS2015) - 2.9.6" "Installing Azure SDK" 'webpicmd /install /products:"Microsoft Azure SDK for .NET (VS 2015) - 2.9.6" /AcceptEULA /SuppressReboot'
 
-Install "Azure Service Fabric SDK" "Installing Azure Service Fabric SDK" 'webpicmd /install /products:"Microsoft Azure Service Fabric SDK and Tools - 2.4.145 (VS2015)" /AcceptEULA'
+Install "Azure Service Fabric SDK" "Installing Azure Service Fabric SDK" 'webpicmd /install /products:"Microsoft Azure Service Fabric SDK and Tools - 2.4.145 (VS2015)" /AcceptEULA /SuppressReboot'
 
 Write-Host -ForegroundColor Green "This script has modified your environment. You need to log off and log back on for the changes to take effect."
 Pause
