@@ -1,0 +1,95 @@
+{
+    "Applications": [
+        {
+            "Name": "Chocolately",
+            "Message": "Installing Chocolately",
+            "Script": "iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/Install-VisualStudio.ps1')",
+            "QuitCode": 0
+        },
+        {
+            "Name": "Visual Studio",
+            "Message": "Installing Visual Studio",
+            "Script": "iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/Install-VisualStudio.ps1')"
+        },
+        {
+            "Name": "Google Chrome",
+            "Message": "Installing Google Chrome",
+            "Script": "cinst googlechrome --force --yes"
+        },
+        {
+            "Name": "Sublime Text3",
+            "Message": "Installing Sublime Text3",
+            "Script": "cinst sublimetext3 --force --yes"
+        },
+        {
+            "Name": "Visual Studio Code",
+            "Message": "Installing Visual Studio Code",
+            "Script": "cinst visualstudiocode --force --yes"
+        },
+        {
+            "Name": "Node JS",
+            "Message": "Installing Node JS",
+            "Script": "cinst nodejs.install --force --yes"
+        },
+        {
+            "Name": "Bower",
+            "Message": "Installing Bower",
+            "Script": "C:\Program Files\nodejs\npm install -g bower" //Todo: Exist issue
+        },
+        {
+            "Name": "Grunt",
+            "Message": "Installing Grunt",
+            "Script": "C:\Program Files\nodejs\npm install -g grunt-cli" //Todo: Exist issue
+        },
+        {
+            "Name": "Source Tree",
+            "Message": "Installing Source Tree",
+            "Script": "cinst sourcetree --force --yes"
+        },
+        {
+            "Name": "Git",
+            "Message": "Installing Git",
+            "Script": "cinst git --force --yes"
+        },
+        {
+            "Name": "ReSharper",
+            "Message": "Installing ReSharper",
+            "Script": "cinst resharper --force --yes"
+        },
+        {
+            "Name": "JRE",
+            "Message": "Installing Java Runtime Environment",
+            "Script": "cinst jre8 --force --yes"
+        },
+        {
+            "Name": "Wix Toolset",
+            "Message": "Installing Wix Toolset",
+            "Script": "cinst wixtoolset --force --yes --allow-empty-checksums"
+        },
+        {
+            "Name": "Web Platform Installer Command Line",
+            "Message": "Installing Web Platform Installer Command Line",
+            "Script": "cinst webpicmd --force --yes"
+        },
+        {
+            "Name": "Azure PowerShell",
+            "Message": "Installing Azure PowerShell",
+            "Script": "webpicmd /install /products:'Microsoft Azure PowerShell' /AcceptEULA /SuppressReboot"
+        },
+        {
+            "Name": "Azure SDK for .net (VS2015) - 2.9.6",
+            "Message": "Installing Azure SDK",
+            "Script": "webpicmd /install /products:'Microsoft Azure SDK for .NET (VS 2015) - 2.9.6'"
+        },
+        {
+            "Name": "Azure Service Fabric SDK",
+            "Message": "Installing Azure Service Fabric SDK",
+            "Script": "webpicmd /install /products:'Microsoft Azure Service Fabric SDK and Tools - 2.4.145 (VS2015)' /AcceptEULA /SuppressReboot"
+        },
+        {
+            "Name": "Aws SDK",
+            "Message": "Installing Aws SDK",
+            "Script": "Start-Process -FilePath msiexec.exe -ArgumentList '/i https://sdk-for-net.amazonwebservices.com/latest/AWSToolsAndSDKForNet.msi /quiet /norestart' -wait"
+        }
+    ]
+}
