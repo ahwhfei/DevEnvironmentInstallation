@@ -31,16 +31,6 @@
             "Message": "Installing Node JS",
             "Script": "cinst nodejs.install --force --yes"
         },
-        // {
-        //     "Name": "Bower",
-        //     "Message": "Installing Bower",
-        //     "Script": "C:\Program Files\nodejs\npm install -g bower" //Todo: Exist issue
-        // },
-        // {
-        //     "Name": "Grunt",
-        //     "Message": "Installing Grunt",
-        //     "Script": "C:\Program Files\nodejs\npm install -g grunt-cli" //Todo: Exist issue
-        // },
         {
             "Name": "Source Tree",
             "Message": "Installing Source Tree",
