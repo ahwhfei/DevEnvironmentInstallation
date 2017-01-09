@@ -17,6 +17,25 @@ function Warning {
     Write-Host -ForegroundColor Green "The next step will take long time..."
 }
 
+function LoginWithoutWarning {
+    $VsStudioFilePath = $VisualStudioIsoFile | Split-Path
+    if (-not (Test-Path -LiteralPath $VisualStudioIsoFile)) {
+        $enterTimes = 0
+        do {
+            $UserName = (Read-Host "Enter domain account")
+            $Password = (Read-Host "Password" -AsSecureString)
+            $UserPassword = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($Password))
+            $enterTimes++
+            net use $VsStudioFilePath /user:$UserName $UserPassword
+        } until (($LASTEXITCODE -eq 0) -or ($enterTimes -ge 3))
+
+        if ($enterTimes -ge 3) {
+            Exit 1
+        }
+    }
+    Write-Host -ForegroundColor Green "The next step will take long time..."
+}
+
 if ($VisualStudioIsoFile -eq "") {
     $server = ""
     Write-Host "Please choice an installation server"
@@ -30,7 +49,7 @@ if ($VisualStudioIsoFile -eq "") {
         $VisualStudioIsoFile = (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/nkg.config')
     }
 
-    Warning
+    LoginWithoutWarning
 }
 
 if (($VisualStudioIsoFile -eq "") -or ((Test-Path -LiteralPath $VisualStudioIsoFile) -eq $False)) {
