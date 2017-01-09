@@ -106,7 +106,7 @@ Install "Azure SDK for .net (VS2015) - 2.9.6" "Installing Azure SDK" 'webpicmd /
 
 Install "Azure Service Fabric SDK" "Installing Azure Service Fabric SDK" 'webpicmd /install /products:"Microsoft Azure Service Fabric SDK and Tools - 2.4.145 (VS2015)" /AcceptEULA /SuppressReboot'
 
-Install "Aws SDK" "Installing Aws SDK" 'start /wait msiexec.exe /i https://sdk-for-net.amazonwebservices.com/latest/AWSToolsAndSDKForNet.msi /quiet /norestart'
+Install "Aws SDK" "Installing Aws SDK" 'Start-Process -FilePath msiexec.exe -ArgumentList "/i https://sdk-for-net.amazonwebservices.com/latest/AWSToolsAndSDKForNet.msi /quiet /norestart" -wait'
 
 Write-Host -ForegroundColor Green "This script has modified your environment. You need to log off and log back on for the changes to take effect."
 Pause
