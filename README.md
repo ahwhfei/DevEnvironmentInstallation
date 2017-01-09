@@ -3,8 +3,10 @@ Windows Development Environment Installation Automation Tool
 ## Motivation
 The goal of this script is for installing dev machine automated. It's benefit for new employee, or setup a dev VM quickly.
 ## How to Use
-1. Open "cmd" to run the command as administrator
-2. @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/DevEnvironmentInstallation.ps1'))"
+* Open "cmd" to run the command as administrator
+```PowerShell
+@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/master/DevEnvironmentInstallation.ps1'))"
+```
 ## Applications List
 * These applications will be installed automatically:
 * Google Chrome
