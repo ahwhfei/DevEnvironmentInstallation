@@ -3,6 +3,7 @@
         {
             "Id": 1,
             "Name": "Chocolately",
+            "Version": "",
             "Message": "Installing Chocolately",
             "Script": "iex (new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1')",
             "QuitCode": 0,
@@ -11,6 +12,7 @@
         {
             "Id": 2,
             "Name": "Web Platform Installer Command Line",
+            "Version": "",
             "Message": "Installing Web Platform Installer Command Line",
             "Script": "cinst webpicmd --force --yes",
             "QuitCode": 0,
@@ -19,6 +21,7 @@
         {
             "Id": 3,
             "Name": "Node JS",
+            "Version": "",
             "Message": "Installing Node JS",
             "Script": "cinst nodejs.install --force --yes",
             "QuitCode": 0,
@@ -27,6 +30,7 @@
         {
             "Id": 4,
             "Name": "Visual Studio",
+            "Version": "",
             "Message": "Installing Visual Studio",
             "Script": "iex (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/develop/plugins/visualstudio/Install-VisualStudio.ps1')",
             "Dependency": []
@@ -34,6 +38,7 @@
         {
             "Id": 5,
             "Name": "Google Chrome",
+            "Version": "",
             "Message": "Installing Google Chrome",
             "Script": "cinst googlechrome --force --yes",
             "QuitCode": 0,
@@ -42,6 +47,7 @@
         {
             "Id": 6,
             "Name": "Sublime Text3",
+            "Version": "",
             "Message": "Installing Sublime Text3",
             "Script": "cinst sublimetext3 --force --yes",
             "QuitCode": 0,
@@ -50,6 +56,7 @@
         {
             "Id": 7,
             "Name": "Visual Studio Code",
+            "Version": "",
             "Message": "Installing Visual Studio Code",
             "Script": "cinst visualstudiocode --force --yes",
             "QuitCode": 0,
@@ -59,6 +66,7 @@
         {
             "Id": 8,
             "Name": "Source Tree",
+            "Version": "",
             "Message": "Installing Source Tree",
             "Script": "cinst sourcetree --force --yes",
             "QuitCode": 0,
@@ -67,6 +75,7 @@
         {
             "Id": 9,
             "Name": "Git",
+            "Version": "",
             "Message": "Installing Git",
             "Script": "cinst git --force --yes",
             "QuitCode": 0,
@@ -75,6 +84,7 @@
         {
             "Id": 10,
             "Name": "ReSharper",
+            "Version": "",
             "Message": "Installing ReSharper",
             "Script": "cinst resharper --force --yes",
             "QuitCode": 0,
@@ -83,6 +93,7 @@
         {
             "Id": 11,
             "Name": "JRE",
+            "Version": "",
             "Message": "Installing Java Runtime Environment",
             "Script": "cinst jre8 --force --yes",
             "QuitCode": 0,
@@ -91,6 +102,7 @@
         {
             "Id": 12,
             "Name": "Wix Toolset",
+            "Version": "",
             "Message": "Installing Wix Toolset",
             "Script": "cinst wixtoolset --force --yes --allow-empty-checksums",
             "QuitCode": 0,
@@ -100,6 +112,7 @@
         {
             "Id": 13,
             "Name": "Azure PowerShell",
+            "Version": "",
             "Message": "Installing Azure PowerShell",
             "Script": "webpicmd /install /products:'Microsoft Azure PowerShell' /AcceptEULA /SuppressReboot",
             "Dependency": [2]
@@ -107,6 +120,7 @@
         {
             "Id": 14,
             "Name": "Azure SDK for .net (VS2015) - 2.9.6",
+            "Version": "",
             "Message": "Installing Azure SDK",
             "Script": "webpicmd /install /products:'Microsoft Azure SDK for .NET (VS 2015) - 2.9.6'",
             "Dependency": [2]
@@ -114,6 +128,7 @@
         {
             "Id": 15,
             "Name": "Azure Service Fabric SDK",
+            "Version": "",
             "Message": "Installing Azure Service Fabric SDK",
             "Script": "webpicmd /install /products:'Microsoft Azure Service Fabric SDK and Tools - 2.4.145 (VS2015)' /AcceptEULA /SuppressReboot",
             "Dependency": [2]
@@ -121,6 +136,7 @@
         {
             "Id": 16,
             "Name": "Aws SDK",
+            "Version": "",
             "Message": "Installing Aws SDK",
             "Script": "Start-Process -FilePath msiexec.exe -ArgumentList '/i https://sdk-for-net.amazonwebservices.com/latest/AWSToolsAndSDKForNet.msi /quiet /norestart' -wait",
             "Dependency": []
