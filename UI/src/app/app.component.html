@@ -1,3 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<div>Windows Apps Automation Installer</div>
+<div>
+    <input type="text" placeholder="Search App Name" />
+    <input type="submit" value="Search" />
+</div>
+<div>
+    <ul>
+        <li *ngFor="let app of applicationList">
+            <span>app.Name</span>
+        </li>
+    </ul>
+</div>
