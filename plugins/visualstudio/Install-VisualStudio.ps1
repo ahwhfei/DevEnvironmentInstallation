@@ -43,10 +43,11 @@ if ($VisualStudioIsoFile -eq "") {
         $server = (Read-Host "(F)lorida/(N)anjing").ToLower()
     } until ($server -eq "f" -or $server -eq "n")
 
+    $IsoPathJsonObject = (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/develop/plugins/visualstudio/config.json') | ConvertFrom-Json
     if ($server -eq "f") {
-        $VisualStudioIsoFile = (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/develop/ftl.config')
+        $VisualStudioIsoFile = $IsoPathJsonObject.FtlIsoImage;
     } elseif ($server -eq "n") {
-        $VisualStudioIsoFile = (new-object net.webclient).DownloadString('https://raw.githubusercontent.com/ahwhfei/DevEnvironmentInstallation/develop/nkg.config')
+        $VisualStudioIsoFile = $IsoPathJsonObject.NkgIsoImage;
     }
 
     LoginWithoutWarning
