@@ -91,12 +91,21 @@ if (-not (Test-Path $OutputFolder)) {
 $originFolder = $PWD
 Set-Location $OutputFolder
 
+function WaitAdminFile ($AdminFileName) {
+    Write-Host -ForegroundColor Green "Creating Visual Studio Deployment File ..."
+    do {
+	    Start-Sleep -Milliseconds 100
+	} until (Test-Path -LiteralPath $AdminFileName)
+}
+
 function ExecuteVSInstallCommand ($CommandName) {
     $CommandFullPath = "$OutputFolder\$CommandName"
     if (Test-Path -LiteralPath ($CommandFullPath)) {
         $AdminFile = "$OutputFolder\AdminDeployment.xml"
-        Write-Host -ForegroundColor Green "Create Admin File..."
+        Write-Host -ForegroundColor Green "Create Admin File..."     
         Start-Process -FilePath "$CommandFullPath" -ArgumentList "/CreateAdminFile $AdminFile /quiet" -Wait
+
+        WaitAdminFile $AdminFile
 
         Write-Host -ForegroundColor Green "Visual Studio Enterprise is installing slicently without user input"
         Write-Host -ForegroundColor Green "Please wait ..."
