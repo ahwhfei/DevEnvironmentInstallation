@@ -100,7 +100,7 @@ function ExecuteVSInstallCommand ($CommandName) {
 
         Write-Host -ForegroundColor Green "Visual Studio Enterprise is installing slicently without user input"
         Write-Host -ForegroundColor Green "Please wait ..."
-        Start-Process -FilePath "$CommandFullPath" -ArgumentList '/AdminFile "$AdminFile" /quiet /norestart' -Wait
+        Start-Process -FilePath "$CommandFullPath" -ArgumentList '/AdminFile "$AdminFile" /passive /norestart' -Wait
     }
 }
 
