@@ -106,9 +106,9 @@ Install "Azure SDK for .net (VS2015) - 2.9.6" "Installing Azure SDK" 'webpicmd /
 
 # Install "Azure Service Fabric SDK" "Installing Azure Service Fabric SDK" 'webpicmd /install /products:"Microsoft Azure Service Fabric SDK and Tools - 2.4.145 (VS2015)" /AcceptEULA /SuppressReboot'
 
-Install "Microsoft Service Fabric 5.1.163.9590" "Installing Microsoft Service Fabric" 'Start-Process -FilePath msiexec.exe -ArgumentList "/i https://storage-ec2-206.sharefile.com/download.ashx?dt=dt8eb04e5116fb40bbbca1ce50dd3cd9dc&h=dCMHv8ZlytVH4OI5nMddv3kC%2baGzy85hiSLKBgwSGvo%3d /quiet /norestart" -wait'
+Install "Microsoft Service Fabric Runtime 5.1.163.9590" "Installing Microsoft Service Fabric" 'Start-Process -FilePath msiexec.exe -ArgumentList "/i http://download.microsoft.com/download/C/9/6/C9680A4C-291F-4A6F-B699-26FF704577BA/MicrosoftServiceFabric.5.1.163.9590.msi /quiet /norestart" -wait'
 
-Install "Microsoft Service Fabric SDK 2.1.163" "Installing Service Fabric SDK" 'Start-Process -FilePath msiexec.exe -ArgumentList "/i https://storage-ec2-265.sharefile.com/download.ashx?dt=dt956bffc6a0124d88ad9c86825425a48d&h=eTOMfwfSdEgoQkWOT9eGgX11FuBENEZlIa%2bHuKngDaY%3d /quiet /norestart" -wait'
+Install "Microsoft Service Fabric SDK 2.1.163" "Installing Service Fabric SDK" 'Start-Process -FilePath msiexec.exe -ArgumentList "/i http://download.microsoft.com/download/C/9/6/C9680A4C-291F-4A6F-B699-26FF704577BA/MicrosoftServiceFabricSDK.2.1.163.msi /quiet /norestart" -wait'
 
 Install "Aws SDK" "Installing Aws SDK" 'Start-Process -FilePath msiexec.exe -ArgumentList "/i https://sdk-for-net.amazonwebservices.com/latest/AWSToolsAndSDKForNet.msi /quiet /norestart" -wait'
 
