@@ -1,12 +1,15 @@
-<div>Windows Apps Automation Installer</div>
+<div class="app-nav">
+    <span>Windows Apps Automation Installer
+    </span>
+</div>
 <div>
     <input type="text" placeholder="Search App Name" />
     <input type="submit" value="Search" />
 </div>
 <div>
     <ul>
-        <li *ngFor="let app of applicationList">
-            <span>app.Name</span>
+        <li *ngFor="let app of applications">
+            <span>{{app.name}}</span>
         </li>
     </ul>
 </div>

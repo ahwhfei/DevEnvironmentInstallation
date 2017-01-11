@@ -1,0 +1,10 @@
+.app-nav {
+    background-color: #4c6a89;
+    color: white;
+    height: 62px;
+    line-height: 62px;
+}
+
+.app-nav span {
+    margin-left: 60px;
+}
